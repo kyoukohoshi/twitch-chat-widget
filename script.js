@@ -19,24 +19,17 @@ function addMessage(user, text) {
 
     const msg = document.createElement("span");
     msg.className = "message";
-
     msg.textContent = text;
 
     row.appendChild(name);
     row.appendChild(msg);
+
     log.appendChild(row);
 
     log.scrollTop = log.scrollHeight;
 }
 
-client.on("message", (channel, tags, message, self) => {
-    addMessage(tags["display-name"] || tags.username, message);
-});
-client.on("connected", (addr, port) => {
-    console.log("CONNECTED TO TWITCH:", addr, port);
-    addMessage("DEBUG", "Connected to Twitch chat");
-});
-
+// ⭐ THIS IS THE IMPORTANT PART ⭐
 client.on("message", (channel, tags, message, self) => {
     addMessage(tags["display-name"], message);
 });
