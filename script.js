@@ -32,3 +32,11 @@ function addMessage(user, text) {
 client.on("message", (channel, tags, message, self) => {
     addMessage(tags["display-name"] || tags.username, message);
 });
+client.on("connected", (addr, port) => {
+    console.log("CONNECTED TO TWITCH:", addr, port);
+    addMessage("DEBUG", "Connected to Twitch chat");
+});
+
+client.on("message", (channel, tags, message, self) => {
+    addMessage(tags["display-name"], message);
+});
