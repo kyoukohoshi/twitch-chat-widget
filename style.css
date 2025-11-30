@@ -1,0 +1,33 @@
+#log {
+  width: 300px;
+  height: 400px;
+  overflow-y: auto;
+  overflow-x: hidden;
+  display: flex;
+  flex-direction: column;
+  padding: 0;
+  margin: 0;
+  background: transparent;
+}
+.message-row {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  width: 100%;
+  padding: 2px 0;
+  margin: 0;
+  gap: 6px;
+  line-height: 1.2;
+}
+.username {
+  font-size: 30px;
+  font-weight: bold;
+}
+.message {
+  font-size: 30px;
+  line-height: 1.2;
+}
+.emote {
+  height: 30px;
+  vertical-align: middle;
+}
